@@ -1,0 +1,122 @@
+.accueil-section_1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .container_1{
+        ol{
+            padding: 20px;
+            li{
+                border-radius: 15px;
+                width: 100%;
+                padding: 20px;
+                margin: 15px 0;
+                background-color: $color-quart;
+                i{
+                    color: $color-primary;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+
+
+.accueil-section_2{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .container_2{
+        background-color: $color-quart;
+        padding: 20px;
+        min-width: 80%;
+        article{
+            position: relative;
+            border: 1px solid black;
+            background-color: white;
+            width: 100%;
+            height: 250px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            img{
+                border-radius:10px 10px 0 0;
+                width: 100%;
+                height: 170px;
+                object-fit: cover;
+            }
+            .new{
+                position: absolute;
+                color: darken($color-third, 50%);
+                background-color: $color-third;
+                width: 70px;
+                padding: 5px;
+                top: 10px;
+                right: 10px;
+            }
+            .contenu{
+                display: flex;
+                justify-content: space-between;
+                .text{
+                    h3{
+                        margin: 5px;
+                    }
+                    p{
+                        margin: 5px;
+                    }
+                }
+                .heart{
+                    @include heart
+                }
+            }   
+        }
+    }
+}
+
+.menu_section{
+    background-color: $color-quart;
+    padding: 20px;
+    h3{
+        border-bottom: 5px solid $color-third;
+        width: 15%;
+    }
+    article{
+        position: relative;
+        background-color: white;
+        overflow: hidden;
+        margin: 20px 0;
+        padding: 10px;
+        border-radius: 15px;
+        &:hover .logo{
+            transform: translate(0px); 
+            & i{
+                transform: rotate(0deg);
+            } 
+        }
+        h4{
+            margin: 0;
+        }
+        div{
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+        }
+        .logo{
+            display:flex;
+            position:absolute;
+            font-size:30px;
+            width:70px;
+            top:0;
+            bottom:0;
+            right:0;
+            color:white;
+            background-color:$color-third;
+            justify-content:center;
+            align-items:center;
+            transform: translate(500px);
+            transition: transform 800ms ease-in-out;
+            i {
+                transform: rotate(-500deg);
+                transition: transform 700ms 100ms ease-in;
+            }
+        }  
+    }
+}

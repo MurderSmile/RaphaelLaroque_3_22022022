@@ -1,0 +1,23 @@
+footer{
+    display: flex;
+    justify-content: center;
+    background-color: gray;
+    .container_footer{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        min-width: 300px;
+        padding: 20px;
+        img{
+
+        }
+        p{
+            color: white;
+            margin: 5px 0;
+            i{
+                margin-right: 10px;
+            }
+        }
+
+    }
+}
