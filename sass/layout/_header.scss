@@ -31,9 +31,10 @@
         align-items: center;
         background-color: white;
         justify-content: center;
-        i{
+        i{  
             position: absolute;
             left: 15px;
+            bottom: 40px;
         }
         h1{
             
@@ -59,7 +60,6 @@
             padding: 0 20px;
             background-color: $color-quart;
             h2{
-
             }
             .heart{
                 @include heart
