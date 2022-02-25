@@ -2,3 +2,7 @@ $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-third: #99E2D0;
 $color-quart:#F2F2F2;
+@mixin color-button { 
+    background: linear-gradient($color-secondary, $color-primary);
+}
+$box-shadow: 3px 3px 15px darken($color: $color-quart, $amount: 20%);

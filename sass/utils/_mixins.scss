@@ -1,20 +1,29 @@
 @mixin heart {
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin: 20px;
-    font-size:30px;
-    #plein{
-        color: red;
-        position:absolute;
-        opacity:0; 
-        transition: opacity, 600ms;
-        &:hover{
-            opacity:1;
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    font-size: 25px;
+    .fas{
+        @include color-button;
+        background-clip: content-box;
+        background-clip: text;
+        -webkit-background-clip:text;
+        color: transparent;
+        position: absolute;
+        animation: opacity 200ms forwards;
+        animation-play-state: paused;
+        opacity: 0;
+        z-index: 1;
+        &:active{
+            animation-play-state: running;
+            & + .far{
+                animation-play-state: running;
+            }
         }
     }
-    #vide{
-        
+    .far{
+        animation: opacity 200ms forwards reverse;
+        animation-play-state: paused;
     }
 }

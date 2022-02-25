@@ -1,9 +1,34 @@
-button
-{
+button{
     display: flex;
+    cursor: pointer;
     color: white;
-    background-color: $color-primary;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
     width: 200px;
-    padding: 10px;
+    padding: 15px;
+    margin: 40px;
     border-radius: 25px;
+    @include color-button;
+    box-shadow: $box-shadow;
+    transition: box-shadow 250ms;
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: white;
+        opacity: 0;
+        border-radius: 25px;
+        transition: opacity 250ms;
+    }
+    &:active{
+        box-shadow: 4px 4px 5px darken($color: $color-quart, $amount: 40%);
+        &::after {
+            opacity: 0.3;
+        }
+    }
 }

@@ -1,0 +1,74 @@
+.loding{
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 200px;
+    z-index: 2;
+    @include color-button;
+    animation: loding_stop 600ms 1400ms forwards;
+    i{
+        animation: loding_icon_stop 1000ms infinite;
+    }
+}
+
+@keyframes loding_stop{
+    0%{
+        transform: scale(1);
+    }
+    25%{
+        transform: scale(0.25);
+    }
+    75%{
+        transform: scale(0.75);
+    }
+    100%{
+        transform: scale(0);
+    }
+}
+@keyframes loding_icon_stop{
+    0%{
+        color: $color-secondary;
+        transform: rotate(0deg);
+    }
+    100%{
+        color: $color-third;
+        transform: rotate(360deg);
+    }
+}
+@keyframes opacity{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes translate_logo{
+    0%{
+        transform: translate(70px);
+    }
+    100%{
+        transform: translate(0px);
+    }
+}
+@keyframes translate_prix{
+    0%{
+        transform: translate(0px);
+    }
+    100%{
+        transform: translate(-70px);
+    }
+}
+@keyframes rotate{
+    0%{
+        transform: rotate(-360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
