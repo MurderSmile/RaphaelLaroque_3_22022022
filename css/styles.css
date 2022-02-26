@@ -10,8 +10,8 @@
   left: 0;
   font-size: 200px;
   z-index: 2;
-  background: linear-gradient(#FF79DA, #9356DC);
-  animation: loding_stop 600ms 1400ms forwards;
+  background-color: #F2F2F2;
+  animation: loding_stop 200ms 1800ms forwards;
 }
 .loding i {
   animation: loding_icon_stop 1000ms infinite;
@@ -20,12 +20,6 @@
 @keyframes loding_stop {
   0% {
     transform: scale(1);
-  }
-  25% {
-    transform: scale(0.25);
-  }
-  75% {
-    transform: scale(0.75);
   }
   100% {
     transform: scale(0);
@@ -49,20 +43,20 @@
     opacity: 1;
   }
 }
-@keyframes translate_logo {
+@keyframes translate {
   0% {
-    transform: translate(70px);
+    transform: translateX(70px);
   }
   100% {
-    transform: translate(0px);
+    transform: translateX(0px);
   }
 }
-@keyframes translate_prix {
+@keyframes padding {
   0% {
-    transform: translate(0px);
+    padding-right: 30px;
   }
   100% {
-    transform: translate(-70px);
+    padding-right: 100px;
   }
 }
 @keyframes rotate {
@@ -71,6 +65,16 @@
   }
   100% {
     transform: rotate(0deg);
+  }
+}
+@keyframes card {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
   }
 }
 .accueil_header {
@@ -92,9 +96,14 @@
   justify-content: center;
   width: 100%;
   background-color: #d9d9d9;
+  box-shadow: 3px 3px 15px #bfbfbf inset;
 }
 .accueil_header form input {
+  border: none;
   background-color: #d9d9d9;
+}
+.accueil_header form i {
+  margin-right: 10px;
 }
 .accueil_header h2 {
   text-align: center;
@@ -201,11 +210,27 @@
   color: white;
   background-color: #9356DC;
 }
-.accueil-section_1 .container_1 ol li i {
+.accueil-section_1 .container_1 ol li .menu_icons {
+  display: inline-block;
+  position: relative;
   margin: 0 15px;
+}
+.accueil-section_1 .container_1 ol li .menu_icons .top {
   color: #8c8c8c;
 }
+.accueil-section_1 .container_1 ol li .menu_icons .bottom {
+  position: absolute;
+  color: #9356DC;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+}
 .accueil-section_1 .container_1 ol li:active::after {
+  opacity: 1;
+}
+.accueil-section_1 .container_1 ol li:active .bottom {
   opacity: 1;
 }
 .accueil-section_1 .container_1 ol li::after {
@@ -301,66 +326,101 @@
   border-bottom: 5px solid #99E2D0;
   width: 15%;
 }
-.menu_section article {
-  display: flex;
+.menu_section .card {
   position: relative;
-  justify-content: space-between;
+  display: flex;
   cursor: pointer;
   overflow: hidden;
   margin: 20px 0;
   border-radius: 15px;
-  background-color: white;
   box-shadow: 3px 3px 15px #bfbfbf;
+  animation: padding 170ms 30ms both paused ease-in-out;
+  animation: card 700ms 300ms both ease-in-out;
+  background-color: white;
 }
-.menu_section article:active .logo {
+.menu_section .card--1 {
+  animation-delay: 100ms;
+}
+.menu_section .card--2 {
+  animation-delay: 200ms;
+}
+.menu_section .card--3 {
+  animation-delay: 300ms;
+}
+.menu_section .card--4 {
+  animation-delay: 400ms;
+}
+.menu_section .card--5 {
+  animation-delay: 500ms;
+}
+.menu_section .card--6 {
+  animation-delay: 600ms;
+}
+.menu_section .card--7 {
+  animation-delay: 700ms;
+}
+.menu_section .card--8 {
+  animation-delay: 800ms;
+}
+.menu_section .card--9 {
+  animation-delay: 900ms;
+}
+.menu_section .card--10 {
+  animation-delay: 1000ms;
+}
+.menu_section .card:active {
   animation-play-state: running;
 }
-.menu_section article:active .logo i {
+.menu_section .card:active .coulissant {
   animation-play-state: running;
 }
-.menu_section article:active .prix {
+.menu_section .card:active .coulissant .logo i {
   animation-play-state: running;
 }
-.menu_section article .text {
-  width: 80%;
+.menu_section .card .text {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
-.menu_section article .text h4 {
+.menu_section .card .text h4 {
   margin: 15px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.menu_section article .text p {
+.menu_section .card .text p {
   margin: 15px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.menu_section article .prix {
+.menu_section .card .coulissant {
+  position: absolute;
+  display: flex;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  animation: translate 170ms 30ms both paused ease-in-out;
+}
+.menu_section .card .coulissant .prix {
   display: flex;
   align-items: flex-end;
-  background-color: aqua;
-  margin: 15px;
-  animation: translate_prix 150ms 50ms forwards paused ease-in-out;
+  width: 30px;
+  padding: 15px 0;
 }
-.menu_section article .logo {
-  position: absolute;
+.menu_section .card .coulissant .logo {
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 30px;
   width: 70px;
-  top: 0;
-  bottom: 0;
-  right: 0;
   background-color: #99E2D0;
-  animation: translate_logo 200ms forwards paused ease-in-out;
 }
-.menu_section article .logo i {
+.menu_section .card .coulissant .logo i {
   background-color: white;
   color: #99E2D0;
   border-radius: 50%;
-  animation: rotate 150ms 50ms forwards paused ease-in-out;
+  animation: rotate 170ms 30ms both paused ease-in-out;
 }
 .menu_section .button {
   display: flex;

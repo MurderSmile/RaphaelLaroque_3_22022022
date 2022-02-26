@@ -9,8 +9,8 @@
     left: 0;
     font-size: 200px;
     z-index: 2;
-    @include color-button;
-    animation: loding_stop 600ms 1400ms forwards;
+    background-color: $color-quart;
+    animation: loding_stop 200ms 1800ms forwards;
     i{
         animation: loding_icon_stop 1000ms infinite;
     }
@@ -20,12 +20,7 @@
     0%{
         transform: scale(1);
     }
-    25%{
-        transform: scale(0.25);
-    }
-    75%{
-        transform: scale(0.75);
-    }
+    
     100%{
         transform: scale(0);
     }
@@ -48,20 +43,20 @@
         opacity: 1;
     }
 }
-@keyframes translate_logo{
+@keyframes translate{
     0%{
-        transform: translate(70px);
+        transform: translateX(70px);
     }
     100%{
-        transform: translate(0px);
+        transform: translateX(0px);
     }
 }
-@keyframes translate_prix{
+@keyframes padding{
     0%{
-        transform: translate(0px);
+        padding-right: 30px;
     }
     100%{
-        transform: translate(-70px);
+        padding-right: 100px;
     }
 }
 @keyframes rotate{
@@ -70,5 +65,15 @@
     }
     100%{
         transform: rotate(0deg);
+    }
+}
+@keyframes card{
+    0%{
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
     }
 }

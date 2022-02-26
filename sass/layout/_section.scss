@@ -29,12 +29,28 @@
                     color: white;
                     background-color: $color-primary;
                 }
-                i{
+                .menu_icons{
+                    display:inline-block;
+                    position:relative;
                     margin: 0 15px;
-                    color: darken($color: $color-quart, $amount: 40%);
+                    .top{
+                        color: darken($color: $color-quart, $amount: 40%);
+                    }
+                    .bottom{
+                        position:absolute;
+                        color: $color-primary;
+                        top: 0;
+                        bottom: 0;
+                        right: 0;
+                        left: 0;
+                        opacity:0;
+                    }
                 }
                 &:active{
                     &::after {
+                        opacity: 1;
+                    }
+                    .bottom{
                         opacity: 1;
                     }
                 }
@@ -108,34 +124,39 @@
 .menu_section{
     background-color: $color-quart;
     padding: 20px;
-    
     h3{
         border-bottom: 5px solid $color-third;
         width: 15%;
     }
-    article{
-        display:flex;
+    .card{
         position: relative;
-        justify-content:space-between;
+        display: flex;
         cursor: pointer;
         overflow:hidden;
         margin: 20px 0;
         border-radius: 15px;
-        background-color: white;
         box-shadow: $box-shadow;
+        animation: padding 170ms 30ms both paused ease-in-out;
+        animation: card 700ms 300ms both ease-in-out;
+        @for $i from 1 through 10 {
+            &--#{$i} {
+                animation-delay: 100ms * $i;
+            }
+        }
         &:active{ 
-            .logo{
+            animation-play-state: running;
+            .coulissant{
                 animation-play-state: running;
-                & i{
+                & .logo i{
                     animation-play-state: running;
                 } 
             }
-            .prix{
-                animation-play-state: running;
-            }
         }
+        background-color: white;
         .text{
-            width: 80%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
             h4{
                 margin:15px;
                 text-overflow: ellipsis;
@@ -149,33 +170,36 @@
                 white-space: nowrap;
             }
         }
-        .prix{
-            display:flex;
-            align-items:flex-end;
-            background-color: aqua;
-            margin:15px;
-            animation: translate_prix 150ms  50ms forwards paused ease-in-out;
-        }
-        .logo{
-            position:absolute;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            font-size: 30px;
-            width:70px;
-            top:0;
-            bottom:0;
-            right:0;
-            background-color: $color-third;
-            animation: translate_logo 200ms forwards paused ease-in-out;
-            i {
-                background-color: white;
-                color: $color-third;
-                border-radius: 50%;
-                animation: rotate 150ms 50ms forwards paused ease-in-out;
+        .coulissant{
+            position: absolute;
+            display: flex;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            animation: translate 170ms 30ms both paused ease-in-out;
+            .prix{
+                display: flex;
+                align-items: flex-end;
+                width: 30px;
+                padding: 15px 0;
             }
-        }   
+            .logo{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 30px;
+                width: 70px;
+                background-color: $color-third;
+                i {
+                    background-color: white;
+                    color: $color-third;
+                    border-radius: 50%;
+                    animation: rotate 170ms 30ms both paused ease-in-out;
+                }
+            }
+        }
     }
+    
     .button{
         display: flex;
         justify-content: center;

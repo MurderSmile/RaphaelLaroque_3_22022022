@@ -14,10 +14,15 @@
     form{
         display: flex;
         justify-content: center;
-        width: 100%;;
+        width: 100%;
         background-color: darken($color-quart, 10%);
+        box-shadow: 3px 3px 15px darken($color: $color-quart, $amount: 20%) inset;
         input{
+            border: none;
             background-color: darken($color-quart, 10%);
+        }
+        i{
+            margin-right: 10px;
         }
     }
     h2{
