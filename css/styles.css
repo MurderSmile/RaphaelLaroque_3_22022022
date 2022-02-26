@@ -334,7 +334,6 @@
   margin: 20px 0;
   border-radius: 15px;
   box-shadow: 3px 3px 15px #bfbfbf;
-  animation: padding 170ms 30ms both paused ease-in-out;
   animation: card 700ms 300ms both ease-in-out;
   background-color: white;
 }
@@ -368,7 +367,7 @@
 .menu_section .card--10 {
   animation-delay: 1000ms;
 }
-.menu_section .card:active {
+.menu_section .card:active .text {
   animation-play-state: running;
 }
 .menu_section .card:active .coulissant {
@@ -381,6 +380,7 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  animation: padding 170ms 30ms both paused ease-in-out;
 }
 .menu_section .card .text h4 {
   margin: 15px;
