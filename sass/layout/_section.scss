@@ -6,12 +6,14 @@
             list-style-type: none;
             counter-reset: list;
             li{
+                display: flex;
+                align-items: center;
                 position: relative;
                 cursor: pointer;
                 z-index: 1;
-                border-radius: 15px;
-                padding: 20px 15px;
-                margin: 15px 0;
+                border-radius: 25px;
+                padding: 15px;
+                margin: 25px 0;
                 background-color: $color-quart;
                 box-shadow: $box-shadow;
                 counter-increment: list;
@@ -57,7 +59,7 @@
                 &::after {
                     position: absolute;
                     z-index: -1;
-                    border-radius: 15px;
+                    border-radius: 25px;
                     content:"";
                     top: 0;
                     right: 0;
@@ -161,12 +163,14 @@
             animation: padding 170ms 30ms both paused ease-in-out;
             h4{
                 margin:15px;
+                margin-bottom: 5px;
                 text-overflow: ellipsis;
                 overflow: hidden;
                 white-space: nowrap;
             }
             p{
                 margin:15px;
+                margin-top: 5px;
                 text-overflow: ellipsis;
                 overflow: hidden;
                 white-space: nowrap;

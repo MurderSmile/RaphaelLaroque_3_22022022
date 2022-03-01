@@ -1,0 +1,21 @@
+{
+  "name": "p3_laroque_raphael",
+  "version": "1.0.0",
+  "description": "p3 openclassroom",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch sass/main.scss:css/styles.css",
+    "prefix": "postcss css/styles.css --use autoprefixer -d css/prefixed/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MurderSmile/RaphaelLaroque_3_22022022.git"
+  },
+  "author": "raphael",
+  "license": "ISC",
+  "browserslist": "last 4 versions",
+  "bugs": {
+    "url": "https://github.com/MurderSmile/RaphaelLaroque_3_22022022/issues"
+  },
+  "homepage": "https://github.com/MurderSmile/RaphaelLaroque_3_22022022#readme"
+}
